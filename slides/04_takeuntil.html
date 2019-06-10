@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- EDIT HERE >>> -->
+    <title>Zühlke reveal.js Slides Template</title>
+    <meta name="description" content="Zühlke reveal.js Slides Template">
+    <meta name="author" content="Zühlke Webplatformz">
+    <!-- <<< EDIT HERE -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="icon" href="../img/zuehlke_logo.jpg">
+    <link rel="stylesheet" href="../css/theme/zuehlke.css" id="theme">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/monokai.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <!-- EDIT HERE >>> -->
+        <section class="deck-slide">
+            <h1>Do it declerative: takeUntil(...)</h1>
+        </section>
+        <section>
+            <section>
+                <h2>What is "takeUntil"?</h2>
+                <p>
+                <ul>
+                    <li>RxJs Opereator - Official Docs: <b>takeUntil(notifier: Observable&#60b>)</b> — Emits the values
+                        emitted by the source Observable until a notifier Observable emits a value.
+                    </li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Demo: clean up - takeUntil</h2>
+                <p>
+                    <iframe src="https://stackblitz.com/edit/angular-tfqaxt?file=src/app/demo.component.ts"></iframe>
+                </p>
+            </section>
+            <section>
+                <h2>Demo: clean up - untilDestroyed</h2>
+                (with <a href="https://github.com/NetanelBasal/ngx-take-until-destroy">ngx-take-until-destroy</a>)
+                <p>
+                    <iframe src="https://stackblitz.com/edit/angular-9p4utv?file=src/app/demo.component.ts"></iframe>
+                </p>
+            </section>
+            <section>
+                <h2>Summary</h2>
+                <p>
+                <ul>
+                    <li>takeUntil acts after given observable is fired and will unsubsribe from the observable</li>
+                    <li>The "unsubscribe" observable must still be called in the OnDestroy block</li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Summary - (Dis-)advantages</h2>
+                <p>
+                <ul>
+                    <li><b>(+)</b> Declerative solution</li>
+                    <li><b>(+)</b> Does let the observable "complete" itself </li>
+                    <li><b>(-)</b> Call on ".next() + .complete()" in OnDestroy can easily be forgotten</li>
+                    <li><b>(-)</b> takeUntil(...) must come last on the setup or else you will get side effects</li>
+                </ul>
+                </p>
+            </section>
+        </section>
+        <!-- >>> EDIT HERE -->
+    </div>
+</div>
+<script src="../js/reveal.js"></script>
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: '../plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: '../plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {src: '../plugin/highlight/highlight.js', async: true},
+            {src: '../plugin/search/search.js', async: true},
+            {src: '../plugin/zoom-js/zoom.js', async: true},
+            {src: '../plugin/notes/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+
+</html>

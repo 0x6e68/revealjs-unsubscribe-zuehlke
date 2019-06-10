@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- EDIT HERE >>> -->
+    <title>Zühlke reveal.js Slides Template</title>
+    <meta name="description" content="Zühlke reveal.js Slides Template">
+    <meta name="author" content="Zühlke Webplatformz">
+    <!-- <<< EDIT HERE -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="icon" href="../img/zuehlke_logo.jpg">
+    <link rel="stylesheet" href="../css/theme/zuehlke.css" id="theme">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/monokai.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <!-- EDIT HERE >>> -->
+        <section class="deck-slide">
+            <h1>Magic "| async"</h1>
+        </section>
+        <section>
+            <section>
+                <h2>What is "| async"?</h2>
+                <p>
+                <ul>
+                    <li> Angular pipe operator: unwraps a value from an asynchronous primitive</li>
+                    <li> When the component gets destroyed, the async pipe unsubscribes automatically to avoid potential
+                        memory leaks
+                    </li>
+                    <li>Comes "out of the box" with Angular</li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Demo: clean up - | async</h2>
+                <p>
+                    <iframe src="https://stackblitz.com/edit/angular-oruurx?file=src%2Fapp%2Fdemo.component.ts"></iframe>
+                </p>
+            </section>
+            <section>
+                <h2>Summary</h2>
+                <p>
+                <ul>
+                    <li>No (un-)subscribe needed, async pipe does all the work</li>
+                    <li>Best solution for simple "get & show" cases</li>
+                    <li>Can be combined with elvis operators to render components only when some data is present</li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Summary - (Dis-)advantages</h2>
+                <p>
+                <ul>
+                    <li><b>(+)</b> No (un-)subscribe needed</li>
+                    <li><b>(+)</b> Really easy to use / understand</li>
+                    <li><b>(+)</b> Can also used by Promises</li>
+                    <li><b>(-)</b> Only useful for simple use cases</li>
+                </ul>
+                </p>
+            </section>
+        </section>
+        <!-- >>> EDIT HERE -->
+    </div>
+</div>
+<script src="../js/reveal.js"></script>
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: '../plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: '../plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {src: '../plugin/highlight/highlight.js', async: true},
+            {src: '../plugin/search/search.js', async: true},
+            {src: '../plugin/zoom-js/zoom.js', async: true},
+            {src: '../plugin/notes/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+
+</html>

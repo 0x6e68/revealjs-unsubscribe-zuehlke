@@ -19,68 +19,50 @@
     <link rel="stylesheet" href="../lib/css/monokai.css">
     <!-- Printing and PDF exports -->
     <script>
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
-    document.getElementsByTagName('head')[0].appendChild(link);
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
     </script>
     <!--[if lt IE 9]>
-        <script src="../lib/js/html5shiv.js"></script>
+    <script src="../lib/js/html5shiv.js"></script>
     <![endif]-->
 </head>
 
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <!-- EDIT HERE >>> -->
-            <section class="deck-slide">
-                <h1>Introduction</h1>
+<div class="reveal">
+    <div class="slides">
+        <!-- EDIT HERE >>> -->
+        <section class="deck-slide">
+            <h1>Introduction</h1>
+        </section>
+        <section>
+            <section>
+                <h2>Why this topic?</h2>
+                <p>
+                <ul>
+                    <li>Update my own knowledge</li>
+                    <li>Most members of my team are new to Angular</li>
+                    <li>I'm interested in <b>your input</b></li>
+                </ul>
+                </p>
             </section>
             <section>
-                <h2>About us</h2>
-                <div class="column-container">
-                    <div class="column-3">
-                        <img src="../img/author1.jpg" class="portrait">
-                        <h3 class="margin-top">Author 1</h3>
-                        <small>since 2019</small>
-                    </div>
-                    <div class="column-3">
-                        <img src="../img/author2.jpg" class="portrait">
-                        <h3 class="margin-top">Author 3</h3>
-                        <small>since 2019</small>
-                    </div>
-                    <div class="column-3">
-                        <img src="../img/author3.jpg" class="portrait">
-                        <h3 class="margin-top">Author 3</h3>
-                        <small>since 2019</small>
-                    </div>
-                </div>
+                <h2>Goals</h2>
+                <p>
+                <ul>
+                    <li>Raise awareness to the topic "Memory Leaks"</li>
+                    <li>Show a list of possible solutions and their trade offs</li>
+                </ul>
+                </p>
             </section>
-            <section>
-                <section>
-                    <h2>Your Expectations</h2>
-                </section>
-                <section>
-                    <h2>Our Goals</h2>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <h2>Schedule</h2>
-                </section>
-                <section>
-                    <h2>Course structure</h2>
-                </section>
-            </section>
-            <section class="deck-slide">
-                <h1>Questions?</h1>
-            </section>
-            <!-- >>> EDIT HERE -->
-        </div>
+        </section>
+        <!-- >>> EDIT HERE -->
     </div>
-    <script src="../js/reveal.js"></script>
-    <script>
+</div>
+<script src="../js/reveal.js"></script>
+<script>
     // More info https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
         controls: true,
@@ -90,15 +72,23 @@
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
-            { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-            { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-            { src: '../plugin/highlight/highlight.js', async: true },
-            { src: '../plugin/search/search.js', async: true },
-            { src: '../plugin/zoom-js/zoom.js', async: true },
-            { src: '../plugin/notes/notes.js', async: true }
+            {
+                src: '../plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: '../plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {src: '../plugin/highlight/highlight.js', async: true},
+            {src: '../plugin/search/search.js', async: true},
+            {src: '../plugin/zoom-js/zoom.js', async: true},
+            {src: '../plugin/notes/notes.js', async: true}
         ]
     });
-    </script>
+</script>
 </body>
 
 </html>
